@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version "1.9.20"
     kotlin("plugin.spring") version "1.9.20"
     kotlin("plugin.jpa") version "1.9.20"
+    kotlin("kapt") version "1.9.20"
 }
 
 group = "com.hmcnetworks"
@@ -30,6 +31,7 @@ dependencies {
     // jpa, querydsl
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.5")
     implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+    kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
     // security
     implementation("org.springframework.security:spring-security-core:6.1.2")
     implementation("org.springframework.security:spring-security-web:6.1.2")

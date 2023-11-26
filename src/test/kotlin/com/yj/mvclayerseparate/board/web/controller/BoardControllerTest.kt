@@ -4,6 +4,7 @@ import com.yj.mvclayerseparate.board.domain.vo.BoardVo
 import com.hmcnetworks.yojic.board.domain.service.BoardCreateSvc
 import com.hmcnetworks.yojic.board.web.controller.BoardController
 import com.hmcnetworks.yojic.board.web.dto.BoardDto
+import com.yj.mvclayerseparate.common.model.CustomResTmpl
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -45,11 +46,11 @@ class BoardControllerTest {
         Mockito.`when`(boardCreateSvcImpl.createBoard(requestDto.toBoardVo())).thenReturn(createdBoardVo)
 
         // When
-        val responseEntity: ResponseEntity<BoardDto> = boardController.createBoard(requestDto)
+        val responseEntity: ResponseEntity<CustomResTmpl<BoardDto>> = boardController.createBoard(requestDto)
 
         // Then
         assertEquals(HttpStatus.OK, responseEntity.statusCode)
-        assertEquals(createdBoardVo.boardTitle, responseEntity.body?.boardTitle)
+        assertEquals(createdBoardVo.boardTitle, responseEntity.body?.data?.boardTitle)
         Mockito.verify(boardCreateSvcImpl).createBoard(requestDto.toBoardVo())
     }
 }
