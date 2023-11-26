@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.hmcnetworks.yojic.board.domain.entity
+package com.yj.mvclayerseparate.board.db.entity
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

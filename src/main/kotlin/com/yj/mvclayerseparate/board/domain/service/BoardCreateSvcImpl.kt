@@ -8,8 +8,8 @@
 
 package com.hmcnetworks.yojic.board.domain.service
 
-import com.hmcnetworks.yojic.board.common.vo.BoardVo
-import com.hmcnetworks.yojic.board.domain.repository.BoardRepository
+import com.yj.mvclayerseparate.board.domain.vo.BoardVo
+import com.yj.mvclayerseparate.board.db.repository.BoardRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional

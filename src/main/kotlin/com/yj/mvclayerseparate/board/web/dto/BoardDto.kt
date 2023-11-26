@@ -8,16 +8,16 @@
 
 package com.hmcnetworks.yojic.board.web.dto
 
-import com.hmcnetworks.yojic.board.common.vo.BoardVo
+import com.yj.mvclayerseparate.board.domain.vo.BoardVo
 import org.hibernate.validator.constraints.Length
 import java.time.LocalDateTime
 
 data class BoardDto(
     var boardId: Long = 0,
     var memId: Long = 0,
-    @field:Length(min = 1, max = 30)
+    @field:Length(min = 1, max = 30, message = "제목은 1글자 이상 30글자 이하로 작성해주세요.")
     val boardTitle: String,
-    @field:Length(min = 1, max = 1000)
+    @field:Length(min = 1, max = 1000, message = "게시글은 1글자 이상 1000글자 이하로 작성해주세요.")
     val boardContents: String,
     var sysUpdateTime: LocalDateTime? = null,
     var sysCreateTime: LocalDateTime? = null,

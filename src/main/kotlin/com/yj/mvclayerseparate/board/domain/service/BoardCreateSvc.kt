@@ -8,7 +8,7 @@
 
 package com.hmcnetworks.yojic.board.domain.service
 
-import com.hmcnetworks.yojic.board.common.vo.BoardVo
+import com.yj.mvclayerseparate.board.domain.vo.BoardVo
 /*
  * 정의 : 게시글 생성 목적 인터페이스
  */

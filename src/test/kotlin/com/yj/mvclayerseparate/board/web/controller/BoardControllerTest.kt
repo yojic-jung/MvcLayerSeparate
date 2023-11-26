@@ -1,6 +1,6 @@
 package com.yj.mvclayerseparate.board.web.controller
 
-import com.hmcnetworks.yojic.board.common.vo.BoardVo
+import com.yj.mvclayerseparate.board.domain.vo.BoardVo
 import com.hmcnetworks.yojic.board.domain.service.BoardCreateSvc
 import com.hmcnetworks.yojic.board.web.controller.BoardController
 import com.hmcnetworks.yojic.board.web.dto.BoardDto

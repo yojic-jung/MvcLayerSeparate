@@ -6,9 +6,9 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.hmcnetworks.yojic.board.common.vo
+package com.yj.mvclayerseparate.board.domain.vo
 
-import com.hmcnetworks.yojic.board.domain.entity.Board
+import com.yj.mvclayerseparate.board.db.entity.Board
 import java.time.LocalDateTime
 
 data class BoardVo(

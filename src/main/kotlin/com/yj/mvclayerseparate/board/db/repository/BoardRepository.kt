@@ -6,9 +6,9 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.hmcnetworks.yojic.board.domain.repository
+package com.yj.mvclayerseparate.board.db.repository
 
-import com.hmcnetworks.yojic.board.domain.entity.Board
+import com.yj.mvclayerseparate.board.db.entity.Board
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 

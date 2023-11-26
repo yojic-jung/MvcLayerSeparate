@@ -10,8 +10,9 @@ package com.hmcnetworks.yojic.board.web.controller
 
 import com.hmcnetworks.yojic.board.domain.service.BoardCreateSvc
 import com.hmcnetworks.yojic.board.web.dto.BoardDto
-import com.hmcnetworks.yojic.common.model.HmcResponseEntity
+import com.yj.mvclayerseparate.common.model.CustomResTmpl
 import jakarta.validation.Valid
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
@@ -21,9 +22,13 @@ class BoardController(
     var boardCreateSvcImpl: BoardCreateSvc
 ) {
     @PostMapping("/createBoard")
-    fun createBoard(@Valid @RequestBody boardDto: BoardDto): HmcResponseEntity<BoardDto> {
-        boardDto.memId = 1 // 하드코딩 추후 멤버 개발되면 수정 예정
-        var boardVo = boardCreateSvcImpl.createBoard(boardDto.toBoardVo())
-        return HmcResponseEntity.ok(BoardDto.fromVoToDto(boardVo))
+    fun createBoard(
+        @Valid @RequestBody
+        boardDto: BoardDto
+    ): ResponseEntity<CustomResTmpl<BoardDto>> {
+        boardDto.memId = 1 // 하드코딩 추후 회원관리 개발되면 수정 예정
+        val boardVo = boardCreateSvcImpl.createBoard(boardDto.toBoardVo())
+        val resBoardDto = BoardDto.fromVoToDto(boardVo)
+        return ResponseEntity.ok(CustomResTmpl<BoardDto>(data = resBoardDto))
     }
 }
